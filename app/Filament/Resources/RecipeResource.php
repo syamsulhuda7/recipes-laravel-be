@@ -32,6 +32,10 @@ class RecipeResource extends Resource
                     ->required()
                     ->maxLength(255),
 
+                Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->maxLength(255),
+
                 Forms\Components\FileUpload::make('thumbnail')
                     ->image()
                     ->required(),
@@ -94,6 +98,9 @@ class RecipeResource extends Resource
                     ->circular(),
 
                 Tables\Columns\ImageColumn::make('thumbnail'),
+
+                Tables\Columns\TextColumn::make('price')
+                    ->searchable(),
             ])
             ->filters([
                 SelectFilter::make('recipe_author_id')

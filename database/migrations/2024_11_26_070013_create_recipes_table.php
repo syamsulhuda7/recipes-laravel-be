@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('thumbnail');
             $table->text('about');
+            $table->integer('price');
             $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->foreignId('recipe_author_id')->constrained()->cascadeOnDelete();
             $table->string('url_video');
